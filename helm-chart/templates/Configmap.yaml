@@ -1,0 +1,9 @@
+{{- range $serviceName := .Values.serviceNames }}
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ $serviceName }}-config
+data:
+  app-name: {{ $serviceName }}
+---
+{{- end }}
